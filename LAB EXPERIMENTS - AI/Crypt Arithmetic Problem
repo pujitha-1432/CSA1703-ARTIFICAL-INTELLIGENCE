@@ -1,0 +1,23 @@
+# SEND + MORE = MONEY
+
+S = 9
+E = 5
+N = 6
+D = 7
+M = 1
+O = 0
+R = 8
+Y = 2
+
+SEND = 1000*S + 100*E + 10*N + D
+MORE = 1000*M + 100*O + 10*R + E
+MONEY = 10000*M + 1000*O + 100*N + 10*E + Y
+
+print("SEND =", SEND)
+print("MORE =", MORE)
+print("MONEY =", MONEY)
+
+if SEND + MORE == MONEY:
+    print("Solution Found")
+else:
+    print("No Solution")
