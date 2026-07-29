@@ -1,0 +1,18 @@
+scores = [3, 5, 2, 9]
+
+def alphabeta(depth, index, alpha, beta, isMax):
+    if depth == 2:
+        return scores[index]
+
+    if isMax:
+        value = max(alphabeta(depth+1, index*2, alpha, beta, False),
+                    alphabeta(depth+1, index*2+1, alpha, beta, False))
+        alpha = max(alpha, value)
+        return value
+    else:
+        value = min(alphabeta(depth+1, index*2, alpha, beta, True),
+                    alphabeta(depth+1, index*2+1, alpha, beta, True))
+        beta = min(beta, value)
+        return value
+
+print("Optimal Value:", alphabeta(0, 0, -999, 999, True))
