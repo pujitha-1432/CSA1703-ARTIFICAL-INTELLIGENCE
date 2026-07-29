@@ -1,0 +1,27 @@
+graph = {
+    'A': ['B', 'C'],
+    'B': ['D'],
+    'C': ['E'],
+    'D': ['G'],
+    'E': ['G'],
+    'G': []
+}
+
+cost = {
+    'A': 6,
+    'B': 4,
+    'C': 5,
+    'D': 2,
+    'E': 3,
+    'G': 0
+}
+
+path = ['A']
+current = 'A'
+
+while current != 'G':
+    next_node = min(graph[current], key=lambda x: cost[x])
+    path.append(next_node)
+    current = next_node
+
+print("Path:", " -> ".join(path))
