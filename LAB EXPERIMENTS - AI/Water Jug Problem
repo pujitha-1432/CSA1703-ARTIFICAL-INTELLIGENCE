@@ -1,0 +1,21 @@
+jug4 = 0
+jug3 = 0
+
+# Fill 3L jug
+jug3 = 3
+print(jug4, jug3)
+
+# Pour into 4L jug
+jug4 = 3
+jug3 = 0
+print(jug4, jug3)
+
+# Fill 3L jug again
+jug3 = 3
+print(jug4, jug3)
+
+# Pour into 4L jug until full
+jug4 = 4
+jug3 = 2
+
+print("Required Water in 3L Jug =", jug3, "Litres")
