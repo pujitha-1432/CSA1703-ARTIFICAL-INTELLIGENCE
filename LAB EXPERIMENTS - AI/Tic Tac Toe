@@ -1,0 +1,11 @@
+board = [['X', 'O', 'X'],
+         ['O', 'X', 'O'],
+         ['O', 'X', 'X']]
+
+for row in board:
+    print(row)
+
+if board[0][0] == board[1][1] == board[2][2]:
+    print("Winner: X")
+else:
+    print("Draw")
