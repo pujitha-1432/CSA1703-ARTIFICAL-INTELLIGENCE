@@ -1,0 +1,22 @@
+% Student - Teacher - Subject Code Database
+
+student(john, math, t101).
+student(alice, physics, t102).
+student(bob, chemistry, t103).
+student(lisa, computer_science, t104).
+
+% Display database
+
+display :-
+    student(Student, Subject, Code),
+    write('Student = '), write(Student),
+    write('  Subject = '), write(Subject),
+    write('  Subject Code = '), write(Code),
+    nl,
+    fail.
+
+display.
+
+% Initial execution
+
+:- initialization(display).
