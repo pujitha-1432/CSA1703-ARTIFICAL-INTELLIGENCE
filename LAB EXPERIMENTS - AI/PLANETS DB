@@ -1,0 +1,27 @@
+% Planets Database
+
+planet(mercury, smallest, 57).
+planet(venus, second, 108).
+planet(earth, third, 150).
+planet(mars, fourth, 228).
+planet(jupiter, fifth, 778).
+planet(saturn, sixth, 1430).
+planet(uranus, seventh, 2871).
+planet(neptune, eighth, 4495).
+
+% Display planet details
+
+display :-
+    planet(Name, Position, Distance),
+    write('Planet = '), write(Name),
+    write('  Position = '), write(Position),
+    write('  Distance from Sun = '), write(Distance),
+    write(' million km'),
+    nl,
+    fail.
+
+display.
+
+% Automatic execution
+
+:- initialization(display).
