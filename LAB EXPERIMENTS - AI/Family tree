@@ -1,0 +1,34 @@
+parent(john, mary).
+parent(john, david).
+parent(susan, mary).
+parent(susan, david).
+
+parent(mary, alice).
+parent(mary, bob).
+
+father(X, Y) :-
+    parent(X, Y).
+
+mother(X, Y) :-
+    parent(X, Y).
+
+child(X, Y) :-
+    parent(Y, X).
+
+sibling(X, Y) :-
+    parent(P, X),
+    parent(P, Y),
+    X \= Y.
+
+grandparent(X, Y) :-
+    parent(X, Z),
+    parent(Z, Y).
+
+:- initialization(main).
+
+main :-
+    write('Father of Mary: '), father(john, mary), write('John'), nl,
+    write('Child of John: '), child(mary, john), write('Mary'), nl,
+    write('Sibling of Mary: '), sibling(mary, david), write('David'), nl,
+    write('Grandparent of Alice: '), grandparent(john, alice), write('John'), nl,
+    halt.
