@@ -1,0 +1,45 @@
+edge(a, b).
+edge(a, c).
+edge(b, d).
+edge(b, e).
+edge(c, f).
+edge(c, g).
+
+h(a, 6).
+h(b, 4).
+h(c, 5).
+h(d, 2).
+h(e, 3).
+h(f, 1).
+h(g, 0).
+
+best_first(Start, Goal) :-
+    search([Start], Goal, []).
+
+search([Goal|_], Goal, _) :-
+    write('Goal Reached: '), write(Goal), nl.
+
+search([Current|Rest], Goal, Visited) :-
+    write('Visiting: '), write(Current), nl,
+    findall(X, edge(Current, X), Children),
+    append(Rest, Children, NewList),
+    best_node(NewList, Next),
+    delete(NewList, Next, Remaining),
+    search([Next|Remaining], Goal, [Current|Visited]).
+
+best_node([X], X).
+
+best_node([X,Y|Rest], Best) :-
+    h(X,HX),
+    h(Y,HY),
+    (HX =< HY ->
+        best_node([X|Rest], Best)
+    ;
+        best_node([Y|Rest], Best)
+    ).
+
+:- initialization(main).
+
+main :-
+    best_first(a, g),
+    halt.
