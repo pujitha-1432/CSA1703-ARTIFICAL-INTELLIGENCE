@@ -1,0 +1,22 @@
+symptom(ravi, fever).
+symptom(ravi, cough).
+symptom(ravi, cold).
+
+disease(flu) :-
+    symptom(ravi, fever),
+    symptom(ravi, cough),
+    symptom(ravi, cold).
+
+disease(cold) :-
+    symptom(ravi, cough),
+    symptom(ravi, cold).
+
+:- initialization(main).
+
+main :-
+    write('Patient: Ravi'), nl,
+    write('Symptoms: Fever, Cough, Cold'), nl,
+    disease(D),
+    write('Possible Disease: '),
+    write(D), nl,
+    halt.
