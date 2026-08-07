@@ -1,0 +1,22 @@
+fruit_color(apple, red).
+fruit_color(banana, yellow).
+fruit_color(orange, orange).
+fruit_color(grapes, green).
+fruit_color(mango, yellow).
+
+:- initialization(main).
+
+main :-
+    write('Apple -> '),
+    fruit_color(apple, Color1),
+    write(Color1), nl,
+
+    write('Banana -> '),
+    fruit_color(banana, Color2),
+    write(Color2), nl,
+
+    write('Mango -> '),
+    fruit_color(mango, Color3),
+    write(Color3), nl,
+
+    halt.
