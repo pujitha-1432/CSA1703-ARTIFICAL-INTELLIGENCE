@@ -1,0 +1,28 @@
+bird(sparrow).
+bird(pigeon).
+bird(eagle).
+bird(penguin).
+bird(ostrich).
+
+can_fly(sparrow).
+can_fly(pigeon).
+can_fly(eagle).
+
+cannot_fly(penguin).
+cannot_fly(ostrich).
+
+:- initialization(main).
+
+main :-
+    write('Sparrow: '), check(sparrow),
+    write('Penguin: '), check(penguin),
+    write('Eagle: '), check(eagle),
+    halt.
+
+check(Bird) :-
+    can_fly(Bird),
+    write('Can Fly'), nl.
+
+check(Bird) :-
+    cannot_fly(Bird),
+    write('Cannot Fly'), nl.
