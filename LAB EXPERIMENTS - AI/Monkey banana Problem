@@ -1,0 +1,14 @@
+move(monkey, door, box).
+move(box, door, middle).
+climb(monkey, box).
+grab(monkey, banana).
+
+:- initialization(main).
+
+main :-
+    write('1. Monkey moves to the box'), nl,
+    write('2. Monkey pushes the box under the bananas'), nl,
+    write('3. Monkey climbs on the box'), nl,
+    write('4. Monkey grabs the bananas'), nl,
+    write('Monkey gets the bananas!'), nl,
+    halt.
