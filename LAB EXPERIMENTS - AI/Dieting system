@@ -1,0 +1,13 @@
+diet(diabetes, fruits).
+diet(hypertension, vegetables).
+diet(anemia, iron_food).
+diet(obesity, balanced_food).
+
+:- initialization(main).
+
+main :-
+    diet(diabetes, Food),
+    write('Disease: diabetes'), nl,
+    write('Suggested Diet: '),
+    write(Food), nl,
+    halt.
