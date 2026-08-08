@@ -1,0 +1,18 @@
+count_words([], 0).
+
+count_words([_|T], N) :-
+    count_words(T, N1),
+    N is N1 + 1.
+
+:- initialization(main).
+
+main :-
+    Words = [i, love, artificial, intelligence],
+    count_words(Words, N),
+    write('Words: '),
+    write(Words),
+    nl,
+    write('Number of words: '),
+    write(N),
+    nl,
+    halt.
