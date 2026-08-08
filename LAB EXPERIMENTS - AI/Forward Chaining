@@ -1,0 +1,21 @@
+fact(sunny).
+fact(warm).
+
+rule(sunny, happy).
+rule(warm, active).
+
+result(X) :-
+    fact(X).
+
+result(X) :-
+    fact(Y),
+    rule(Y, X).
+
+:- initialization(main).
+
+main :-
+    write('Fact: sunny'), nl,
+    write('Fact: warm'), nl,
+    write('Derived: happy'), nl,
+    write('Derived: active'), nl,
+    halt.
