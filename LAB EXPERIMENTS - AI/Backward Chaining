@@ -1,0 +1,18 @@
+bird(sparrow).
+has_wings(sparrow).
+
+bird(penguin).
+
+can_fly(X) :-
+    bird(X),
+    has_wings(X).
+
+:- initialization(main).
+
+main :-
+    write('Backward Chaining Queries'), nl,
+    write('Can sparrow fly? '),
+    (can_fly(sparrow) -> write('Yes') ; write('No')), nl,
+    write('Can penguin fly? '),
+    (can_fly(penguin) -> write('Yes') ; write('No')), nl,
+    halt.
