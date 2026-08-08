@@ -1,0 +1,20 @@
+student(rahul, cse).
+student(anu, ece).
+student(ravi, cse).
+
+match(Name, Branch) :-
+    student(Name, Branch).
+
+:- initialization(main).
+
+main :-
+    write('Pattern Matching Results:'), nl,
+    match(Name, cse),
+    write('Name: '),
+    write(Name),
+    write(', Branch: cse'),
+    nl,
+    fail.
+
+main :-
+    halt.
